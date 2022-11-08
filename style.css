@@ -1,0 +1,656 @@
+:root {
+    /* Переменные для цветов сайта */
+    --black: #2b2a2c;
+    --gray: #6a696b;
+    --gray-light: #dedede;
+    --white: #ffffff;
+
+}
+
+body {
+    margin: 0; /* отступ снаружи */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; /* 1rem = 16px */
+    color: black;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* Заголовки */
+    margin: 0;
+}
+
+p { 
+    margin: 0 0 1rem; /*верх лево-право низ*/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%; 
+    max-width: 1200px;
+    padding-left: 1rem; /* Отступ внутрь */
+    padding-right: 1rem;
+    margin: 0 auto; /*верх-низ лево-право*/
+}
+
+.header {
+    padding: 1.2rem 0; /*верх-низ лево-право*/
+    position: relative;
+}
+
+.header_inner {
+    display: flex; /* гибкий*/
+    justify-content: space-between; /* Сделаем пустое пространство между div. Флексы распределяются по строке. Первый и последний элемент прижимаются к своим краям контейнера */
+    align-items: center; 
+}
+
+.user {
+    display: flex; /* гибкий, чтобы следующий div был справа от этого div*/
+}
+
+.user_avatar {
+    border-radius: 50%; /* 50% - Чтобы сделать круглую картинку */
+}
+
+.user_content {
+    padding-left: 9px;
+}
+
+.user_name {
+    font-size: 1rem;
+    color: var(--black);  /*Цвет из переменной --black*/
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.user_prof {
+    font-size: 0.75rem;
+    color: var(--black);
+    opacity: 0.7; /*Прозрачность 70%*/
+}
+
+.nav {
+    display: flex; 
+    flex-wrap: wrap;  /*Блоки div будут переноситься на следующую строку при уменьшении размера страницы*/
+    
+    align-items: center;
+    height: 100%;
+}
+
+.nav_link {
+    margin-left: 2rem;  /* чтобы было расстояние между элементами меню */
+    position: relative;
+
+    font-size: 0.9rem;
+    color: var(--black);
+    font-weight: bold;
+    text-transform: uppercase; /*все буквы БОЛЬШИЕ */
+    text-decoration: none; /* уберем подчеркивание гиперссылки*/
+}
+
+.nav_link:hover {
+    /* класс для наведения на меню */
+    border-bottom: 2px solid black; /*граница под элементом, толщина 2px, полная, черная*/
+    padding-bottom: 4px; /* отступ снизу */
+}
+
+/* ---- Раздел = Intro ---------------- */
+
+.intro_inner {
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between; /* Сделаем пустое пространство между div. Флексы распределяются по строке. Первый и последний элемент прижимаются к своим краям контейнера */
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    align-items: center;
+
+    border-bottom: 1px solid gray;
+}
+
+.intro_subtitle {
+    color: var(--black);
+    font-weight: 200;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.intro_title {
+    color: var(--black);
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.intro_text {
+    color: var(--black);
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.social {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+}
+
+.social_link {
+    margin-right: 0.75rem;
+    text-decoration: none; /*отменим стандартное поведение ссылок*/
+
+}
+
+.social_link:hover {
+    /*hover - при наведение мыши*/
+    transform: translateY(-5px); /*поднимем вверх*/
+}
+
+.btn {
+    display: inline-block;
+    vertical-align: top; /*разместим кнопку сверху*/
+    width: 12.5rem;
+    padding: 1rem 2rem; /*отступ вверх-низ  Лево-право*/
+
+    border: 1px solid black;
+    border-radius: 1.8rem;
+    background: none; /*уберем фон*/
+
+    cursor: pointer; /*курсор при наведении*/
+
+    font-size: 1rem;
+    color: var(--black);
+    text-transform: uppercase;
+    text-align: center; /*выровнять посередине*/
+    opacity: 0.8;
+}
+
+.btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.intro_photo {
+    /* width: 100%; */
+    position: relative;
+
+    border-radius: 2rem;
+}
+
+/* ---- Раздел = My Works ---------------- */
+
+.text_center {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap; /* Блоки div будут переноситься на следующую строку при уменьшении размера страницы*/
+    justify-content: space-between; /* Сделаем пустое пространство между div. Флексы распределяются по строке. Первый и последний элемент прижимаются к своим краям контейнера */
+
+    padding-bottom: 2rem;
+    border-bottom: 1px solid gray;
+}
+
+.work {
+    overflow: hidden;
+    box-shadow: 0 0 4px black; /* ось X, ось Y, Толщина, Цвет */
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.work:hover {
+    box-shadow: 0 0 25px black; /* ось X, ось Y, Толщина, Цвет */
+}
+
+.work_content {
+    padding: 1rem 0.8rem; /* Вверх-низ  Лево-право */
+}
+
+.work_cat {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    color: var(--black);
+}
+
+.work_title {
+    display: flex;
+    justify-content: space-between; /* Сделаем пустое пространство между div. div расположатся по горизонтали */
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+/* ---- Раздел = ABOUT ME ---------------- */
+
+.about_inner {
+    display: flex;
+    flex-wrap: wrap; /* Блоки div будут переноситься на следующую строку при уменьшении размера страницы*/
+    margin: 3rem 0;
+}
+
+.about_photo {
+    max-width: 50%; /*Ширина блока 50%. Для фото 50% и для текста 50%*/
+    border-radius: 1rem;
+    
+}
+
+.about_content {
+    max-width: 50%;    
+    margin-left: 7rem;
+    margin-top: 5rem;
+}
+
+.about_title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.about_big_title {
+    font-size: 5.75rem;
+    font-weight: bold;
+    color: var(--gray-light);
+    text-transform: uppercase;
+}
+
+.about_text {
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray);
+}
+
+
+/* ---- Раздел = REVIEWs ---------------- */
+
+.reviews {
+    background: #332f30 url("images/reviews_BackGround.png") center no-repeat;
+    padding: 3rem 0; /* Вверх-низ  Лево-право */
+    position: relative;
+    
+    /* align-items: center; */
+}
+
+.reviews_inner {
+    width: 100%;
+    max-width: 830px;
+    margin: 0 auto; /* Расположим блок по центру, используя Слева-Справа нулевые отступы */
+}
+
+.reviews_text {
+    font-size: 0.9rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.reviews_author {
+    width: 100%;
+    margin-top: -51px; /* Картинка будет на половину накрывать Background */
+    text-align: center;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1; /* Картинка будет сверху */
+}
+
+.reviews_company {
+    margin-bottom: 0.3rem;
+
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.reviews_name {
+    margin-bottom: 0.3rem;
+
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.reviews_star_unactive {
+    opacity: 0.3; /* Прозрачность 40% */
+}
+
+.reviews_rating {
+    margin-bottom: 6rem;
+}
+
+
+/* ---- Раздел = Cources ---------------- */
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(-gray);
+    font-weight: 300;
+    text-align: center;
+}
+
+.margin {
+    margin-bottom: 1rem;
+}
+
+.courses {
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+}
+
+.courses_inner {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-wrap: wrap; /* Блоки div будут переноситься на следующую строку при уменьшении размера страницы*/
+}
+
+.course {
+    width: 33.33%;  /*  3 блока будут помещаться в строку */
+    
+    padding: 0 1rem; /* Вверх-низ  Лево-право */
+}
+
+.course_name {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.course_cat {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+}
+
+.course_text {
+    margin-top: 1.75rem;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--gray);
+}
+
+.btn_edit {
+    margin-top: 1.5rem;
+
+    width: 130px;   
+    height: 34px;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    padding: 0.5rem 0.75rem; /*отступ вверх-низ  Лево-право*/
+}
+
+.course_link {
+    font-size: 0.9rem;
+    color: var(--gray);
+
+    margin-top: 1rem;
+    text-align: right; /*Выровняем по правому краю*/
+}
+
+
+/* ---- Раздел = Footer ---------------- */
+
+.footer {
+    padding: 1rem 0; /* Вверх-низ  Лево-право */
+
+    background-color: #2b2a2c;
+}
+
+.footer_inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Сделаем пустое пространство между div. Флексы распределяются по строке. Первый и последний элемент прижимаются к своим краям контейнера */
+
+}
+
+.footer_info {
+    display: flex;
+    align-items: center;
+}
+
+.footer_copyright {
+    font-size: 0.9rem;
+
+    color: var(--gray);
+
+    border-right: 1px solid var(--gray); /* Линия справа */
+    padding-right: 1rem; /*Линию справа сдвинем вправо на 1rem*/
+    margin-right: 1rem;
+}
+
+.footer_social {
+    display: flex;
+    align-items: center;
+}
+
+.footer_link {
+    margin-right: 1rem;
+
+    text-decoration: none;
+}
+
+.footer_nav{
+    display: flex;
+    align-items: center;
+}
+
+.footer_nav_link {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-weight: bold;
+    text-decoration: none;
+
+    margin-right: 1rem;
+}
+
+/* ====== Модальное окно ======   */
+
+.modal {
+    display: none; /* Скрыть */
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    overflow: auto;
+
+    background-color: rgba(192, 192, 192, 0.9); /* цвет фона */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.modal_show {
+    display: flex;  /* Показать */
+}
+
+.modal_dialog {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+
+    background-color: white;
+}
+
+.modal_title {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    padding: 2rem 0;
+}
+
+.modal_photo {
+    width: 90%;
+    height: 90%;
+}
+
+.btn_modal {
+    margin: 2rem 0;
+}
+
+/* ==== ПЛАНШЕТ. Адаптивная верстка ==== */
+
+/* Ширина 0-1199px */
+@media(max-width: 1199px) {
+    .intro_inner {
+        flex-wrap: wrap-reverse; /*Фотографию сделам сверху*/
+
+        padding: 2rem 0; /*Вверх-низ  LR*/
+    }
+
+    .intro_photo {
+        width: 100%;
+    }
+        
+    .work {
+        width: 98%;
+        margin: 1rem auto; /*Up-Down LR,  auto - чтобы выровнять по горизонтали*/
+        border-radius: 1.5rem;
+    }
+
+    .work_photo {
+        width: 100%;
+    }
+
+    .work_cat {
+        font-size: 1.2rem;
+    }
+
+    .work_title {
+        font-size: 1.5rem;
+    }
+
+    .about_photo {
+        width: 40%;
+        height: 40%;
+        border-radius: 1rem;
+    }
+    
+    .about_content {
+        margin: 1rem;
+        padding: 0 1rem; /*Up-Down LR */
+    }
+
+    .about_big_title {
+        font-size: 3rem;
+    }
+
+    .course {
+        width: 100%;
+        margin-bottom: 2rem;
+        padding: 0 1rem; /* UP-down LR */
+    }
+
+    .course_photo {
+        width: 100%;
+    }
+
+    .course_text {
+        font-size: 1rem;
+    }
+}
+
+
+/* ==== СМАРТФОН, МОБИЛЬНАЯ. Адаптивная верстка ==== */
+
+@media (max-width: 767px) {
+    .user {
+        display: none; /* Скрыть */
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around; /* Равномерно распределяет все элементы по ширине flex-блока */
+
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+    }
+
+    .nav_link {
+        margin: 0; 
+    }
+
+    .intro_inner {
+        padding-top: 0;
+
+    }
+
+    .intro_title {
+        font-size: 2rem;
+    }
+
+    .text_center {
+        margin: 1rem auto; /*Вверх-низ LR=auto чтобы выровнять по центру*/
+    }
+
+    .portfolio {
+        padding-bottom: 1rem;
+    }
+
+    .about_inner {
+        margin: 1rem 0; /*Вверх-низ LR=auto чтобы выровнять по центру*/
+        justify-content: center; /* Выровнять по центру */
+    }
+
+    .about_photo {
+        min-width: 100%;
+    }
+
+    .about_content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about_title {
+        font-size: 1.5rem;
+    }
+
+    .about_text {
+        margin: 1rem 0;
+    }
+
+    .courses_inner {
+        margin-top: 1rem;
+    }
+
+    .courses {
+        margin-bottom: 2rem;
+    }
+
+    .course {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .btn_edit {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .course_link {
+        font-size: 1rem;
+    }
+
+    .footer_nav {
+        display: none; /* Скрыть */
+    }
+
+}
